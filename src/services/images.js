@@ -37,6 +37,7 @@ export const uploadImage = async (file, user) => {
 
   const response = await fetch(`${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.UPLOAD}`, {
     method: 'POST',
+    mode: 'no-cors',
     headers: {
       'Authorization': `Bearer ${user.token}`,
     },
