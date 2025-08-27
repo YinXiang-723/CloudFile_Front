@@ -8,6 +8,9 @@ const calculateMD5 = (str) => {
 };
 
 export const loginUser = async (username, password) => {
+  // 对密码进行MD5加密
+  const md5Password = calculateMD5(password);
+  
   const response = await fetch(`${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.LOGIN}`, {
     method: 'POST',
     headers: {
@@ -15,7 +18,7 @@ export const loginUser = async (username, password) => {
     },
     body: JSON.stringify({
       user: username,
-      pwd: password
+      pwd: md5Password
     })
   });
 
