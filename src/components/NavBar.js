@@ -91,7 +91,13 @@ const NavBar = () => {
   const { user, logout } = useAuth();
   const location = useLocation();
 
-  const menuItems = []; // 移除所有导航菜单项
+  const menuItems = [
+    {
+      key: '/storage',
+      label: '存储管理',
+      icon: <PictureOutlined />
+    }
+  ];
 
   return (
     <StyledHeader>

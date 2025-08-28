@@ -80,6 +80,8 @@ const Home = () => {
             id: data.userId,
             token: data.token
           });
+          // 注册成功后跳转到存储管理页面
+          navigate('/storage');
         } else if (data.code === 2) {
           message.error('用户名已存在，请重新输入！');
         }
@@ -95,6 +97,8 @@ const Home = () => {
           username: values.username,
           token: data.token
         });
+        // 登录成功后跳转到存储管理页面
+        navigate('/storage');
       } catch (error) {
         message.error('登录失败，请检查网络连接！');
         console.error('登录错误：', error);

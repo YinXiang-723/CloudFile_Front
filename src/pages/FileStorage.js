@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Navigate } from 'react';
 import {
   Layout,
   Upload,
@@ -95,6 +95,12 @@ const FileTable = styled(Table)`
 
 const FileStorage = () => {
   const { user } = useAuth();
+  
+  // 如果用户未登录，重定向到登录页面
+  if (!user || !user.token) {
+    return <Navigate to="/login" replace />;
+  }
+  
   const [files, setFiles] = useState([]);
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
   const [folderTree, setFolderTree] = useState([]);
