@@ -82,7 +82,7 @@ const Login = () => {
             id: data.userId,
             token: data.token
           });
-          navigate('/');
+          navigate('/storage');
         } else if (data.code === 2) {
           message.error('用户名已存在，请重新输入！');
         }
@@ -98,7 +98,7 @@ const Login = () => {
           username: values.username,
           token: data.token
         });
-        navigate('/');
+        navigate('/storage');
       } catch (error) {
         message.error('登录失败，请检查网络连接！');
         console.error('登录错误：', error);

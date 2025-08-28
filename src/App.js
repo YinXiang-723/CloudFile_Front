@@ -1,11 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from 'antd';
 import styled from '@emotion/styled';
-import Login from './pages/Login';  // 确保正确导入 Login 组件
+import Login from './pages/Login';
 import Home from './pages/Home';
-import ImageList from './pages/ImageList';
-import SharedFiles from './pages/SharedFiles';
-import TopDownloads from './pages/TopDownloads';
+import FileStorage from './pages/FileStorage';
 import NavBar from './components/NavBar';
 import { AuthProvider } from './contexts/AuthContext';
 
@@ -34,11 +32,9 @@ function App() {
           <NavBar />
           <GlassContent>
             <Routes>
-              <Route path="/login" element={<Login />} />  {/* 确保登录路由存在 */}
+              <Route path="/login" element={<Login />} />
               <Route path="/" element={<Home />} />
-              <Route path="/images" element={<ImageList />} />
-              <Route path="/shared" element={<SharedFiles />} />
-              <Route path="/top-downloads" element={<TopDownloads />} />
+              <Route path="/storage" element={<FileStorage />} />
             </Routes>
           </GlassContent>
         </StyledLayout>

@@ -91,16 +91,11 @@ const NavBar = () => {
   const { user, logout } = useAuth();
   const location = useLocation();
 
-  const menuItems = [
-    { key: '/', icon: <HomeOutlined />, label: '首页' },
-    { key: '/images', icon: <PictureOutlined />, label: '我的图片' },
-    { key: '/shared', icon: <ShareAltOutlined />, label: '共享文件' },
-    { key: '/top-downloads', icon: <DownloadOutlined />, label: '下载榜' },
-  ];
+  const menuItems = []; // 移除所有导航菜单项
 
   return (
     <StyledHeader>
-      <Logo>图床系统</Logo>
+      <Logo>云存储系统</Logo>
       <MainMenu
         mode="horizontal"
         selectedKeys={[location.pathname]}

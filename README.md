@@ -88,9 +88,46 @@ export const API_CONFIG = {
     REGISTER: '/api/reg',
     MY_FILES: '/api/myfiles',
     UPLOAD: '/api/upload',
-    DEAL_FILE: '/api/dealfile'
+    DEAL_FILE: '/api/dealfile',
+    // 文件夹相关API
+    FOLDERS: '/api/folders',
+    FOLDER_FILES: '/api/folderfiles',
+    // 文件操作API
+    FILE_MOVE: '/api/filemove',
+    BATCH_OPERATION: '/api/batchoperation',
+    // 分享相关API
+    SHARE_FILES: '/api/sharefiles'
   }
 };
+```
+
+### API端点说明
+
+#### 用户认证
+- `POST /api/login` - 用户登录
+- `POST /api/reg` - 用户注册
+
+#### 文件管理
+- `POST /api/upload` - 文件上传
+- `GET /api/myfiles` - 获取用户文件列表
+- `POST /api/dealfile` - 文件处理（删除等）
+
+#### 文件夹管理
+- `POST /api/folders` - 获取用户文件夹列表
+- `POST /api/folders?cmd=create` - 创建文件夹
+- `POST /api/folders?cmd=update` - 更新文件夹名称
+- `POST /api/folders?cmd=delete` - 删除文件夹
+- `POST /api/folders?cmd=move` - 移动文件夹
+- `POST /api/folderfiles` - 获取文件夹中的文件列表
+
+#### 文件操作
+- `POST /api/filemove?cmd=single` - 移动单个文件到文件夹
+- `POST /api/filemove?cmd=batch` - 批量移动文件到文件夹
+- `POST /api/batchoperation` - 批量操作（删除、分享等）
+
+#### 分享功能
+- `POST /api/sharefiles` - 分享文件
+- `GET /api/sharefiles` - 获取分享文件列表
 ```
 
 ## 认证流程
